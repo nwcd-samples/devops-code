@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 引入css -->
+    <link rel="stylesheet" href="../node_modules/layui-src/dist/css/layui.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-table/dist/bootstrap-table.min.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-table/dist/bootstrap-table-fixed-columns.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <title>nwcd devops</title>
+</head>
+<body>
+    <div class="index-body" id="index-content">
+        <!-- 导航 -->
+        <div class="nav">
+            <div id="logo">
+                <span id="logo-text">AWS DEVOPS</span>
+                <span id="logo-image"><i class="layui-icon layui-icon-senior"></i></span>
+            </div>
+            <ul class="layui-nav layui-nav-tree" lay-filter="indexNav" id="indexNav">
+                <!-- <li class="layui-nav-item layui-nav-itemed">
+                    <a href="javascript:;">默认展开</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">选项1</a></dd>
+                        <dd><a href="javascript:;">选项2</a></dd>
+                        <dd><a href="javascript:;">跳转</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item"><a href="javascript:;">产品</a></li>
+                <li class="layui-nav-item"><a href="javascript:;">大数据</a></li> -->
+            </ul>
+        </div>
+        <!-- 内容 -->
+        <div class="main">
+                <!-- 头部 -->
+                <div class="header">
+                    <ul class="nav-float-left">
+                        <li class="nav-flex-item" id="toggleNav">
+                            <i class="layui-icon layui-icon-shrink-right"></i>
+                        </li>
+                        <li class="nav-flex-item" id="refresh">
+                            <i class="layui-icon layui-icon-refresh-1"></i>
+                        </li>
+                    </ul>
+                    <ul class="nav-float-right">
+                        <li class="nav-flex-item" id="user">
+                            <i class="layui-icon layui-icon-user"></i>
+                            <div id="user-info">
+                                <div id="username"></div>
+                                <hr class="layui-bg-gray" style="margin: 2px 0;">
+                                <div id="login-out">登出</div>
+                            </div>
+                        </li>
+                        <li class="nav-flex-item" id="fullExit">
+                            <i class="layui-icon layui-icon-screen-full"></i>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 内容 -->
+                <div class="content">
+                    <div class="layui-tab layui-tab-brief" lay-allowClose="true" lay-filter="indexTab">
+                        <ul class="layui-tab-title" id="index-tab-title">
+                            DEVOPS 动手训练营欢迎您！
+                        </ul>
+                        <div class="layui-tab-content" style="height: 100px;" id="index-tab-content">
+                            DEVOPS 动手训练营欢迎您！
+                        </div>
+                    </div>
+                </div>
+                <!-- 底部 -->
+                <!-- <div class="footer">
+                    底部
+                </div> -->
+        </div>
+    </div>
+    <div id="loading" class="loading">
+        <div class="ico">
+            <i class="layui-icon layui-icon-loading-1 layui-anim layui-anim-rotate layui-anim-loop"></i>
+        </div>
+    </div>
+    <!-- 引入js -->
+    <script  type="text/javascript" src="../node_modules/jquery.min.js"></script>
+    <script  type="text/javascript" src="../node_modules/jquery-cookie.js"></script>
+    <script type="text/javascript" src="../node_modules/echarts.min.js"></script>
+    <script  type="text/javascript" src="../node_modules/layui-src/dist/layui.all.js"></script>
+    <script  type="text/javascript" src="../node_modules/bootstrap-table/dist/bootstrap-table.min.js"></script>
+    <script  type="text/javascript" src="../node_modules/bootstrap-table/dist/bootstrap-table-locale-all.min.js"></script>
+    <script  type="text/javascript" src="../js/common.js"></script>
+    <script  type="text/javascript" src="../js/index.js"></script>
+    <script  type="text/javascript">
+        myIndex.pageInit('#index-content');
+    </script>
+</body>
+</html>

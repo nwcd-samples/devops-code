@@ -1,0 +1,40 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      java: corretto17
+  pre_build:
+      commands:
+        - echo Logging in to Amazon ECR...
+        - aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/d3l9y6y9
+         # - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
+  build:
+    commands:
+      - echo Build started on `date`
+      - mvn install
+      -  echo Build started on `date`
+      - echo Building the Docker image...
+      - docker build -t devopspub .
+      - docker tag  devopspub:latest public.ecr.aws/d3l9y6y9/devopspub:V1.0
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - mvn package
+      - echo Build completed on `date`
+      - echo Pushing the Docker image...
+      - docker push public.ecr.aws/d3l9y6y9/devopspub:V1.0
+artifacts:
+  files:
+   - target/devops-0.0.1-SNAPSHOT.jar
+
+reports:
+  arn:aws:codebuild:ap-northeast-2:360174233866:report-group/devops:
+    files:
+        - '**/*'
+    base-directory: 'target/surefire-reports'
+    discard-paths: false
+
+#  sampleReportGroup: #Cucumber reports from json plugin
+#    files:
+#        - 'target/devops-json-report.json'
+#    file-format: DEVOPSJSON #Type of the report, defaults to JUNITXML

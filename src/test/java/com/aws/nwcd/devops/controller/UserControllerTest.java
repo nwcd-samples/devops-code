@@ -21,7 +21,7 @@ class UserControllerTest {
 
     @Test
      void userloginTest() throws Exception{
-         mockMvc.perform(MockMvcRequestBuilders.get("/userlogin")).andExpect(status().isOk()).andDo(print());
+         mockMvc.perform(MockMvcRequestBuilders.post("/user/login")).andExpect(status().isOk()).andDo(print());
 
      }
 

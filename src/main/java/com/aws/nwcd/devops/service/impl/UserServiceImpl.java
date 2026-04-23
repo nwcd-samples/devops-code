@@ -5,8 +5,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UserServiceImpl implements UserService {
-    private static String USER_NAME="devops";
-    private static String PASS_WORD="devops1013";
+    private static String USER_NAME="****";
+    private static String PASS_WORD="****";
 
     public boolean validUser(String userName){
         boolean flag = false;
